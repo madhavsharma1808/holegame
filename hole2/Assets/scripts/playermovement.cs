@@ -7,7 +7,7 @@ public class playermovement : MonoBehaviour
 
     float movementspeed = 5f;
     float xmin, xmax, ymin, ymax;
-    [SerializeField] float padding = 1f;
+    [SerializeField] float padding = 0f;
     void Update()
     {
         setcamera();
