@@ -12,6 +12,8 @@ public class playermovement : MonoBehaviour
     {
         setcamera();
         movement();
+       
+        
     }
 
     public void setcamera()
@@ -31,6 +33,11 @@ public class playermovement : MonoBehaviour
         cordx = Mathf.Clamp(transform.position.x+cordx, xmin, xmax);
         cordy = Mathf.Clamp(transform.position.y+cordy,ymin,ymax);
         transform.position =new  Vector2(cordx,cordy);
+    }
+
+    public Vector2 returncoordinates()
+    {
+        return transform.position;
     }
 }
 
