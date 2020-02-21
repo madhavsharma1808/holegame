@@ -5,12 +5,13 @@ using UnityEngine;
 public class enemypath : MonoBehaviour
 {
 
-    [SerializeField] float speed = 1f;
+    [SerializeField] float speed = 4f;
     void Update()
     {
         var player = FindObjectOfType<playermovement>().returncoordinates();
 
-        transform.position = Vector2.MoveTowards(transform.position, player, speed * Time.deltaTime);
+        var speedrandom = Random.Range(1f, speed);
+        transform.position = Vector2.MoveTowards(transform.position, player, speedrandom * Time.deltaTime);
 
         
     }
@@ -19,8 +20,8 @@ public class enemypath : MonoBehaviour
     {
         if (collision.collider.GetType() == typeof(CircleCollider2D))
         {
-            float x = Random.Range(0.1f, 2f);
-            float y = Random.Range(0.1f, 2f);
+            float x = Random.Range(-12, 12);
+            float y = Random.Range(-12, 12);
 
 
             collision.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(x, y);

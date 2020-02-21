@@ -8,6 +8,8 @@ TagManager:
   - wall right
   - wall up
   - wall down
+  - player
+  - enemy
   layers:
   - Default
   - TransparentFX

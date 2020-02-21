@@ -20,7 +20,7 @@ public class createhole : MonoBehaviour
             float randomy = Random.Range(1f, 9f);
             Vector3 coordinates = new Vector3(randomx, randomy, 0);
             Instantiate(loop, coordinates, Quaternion.identity);
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(1);
         }
     }
 
