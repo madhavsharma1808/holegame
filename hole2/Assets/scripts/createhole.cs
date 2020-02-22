@@ -5,7 +5,7 @@ using UnityEngine;
 public class createhole : MonoBehaviour
 {
     [SerializeField] GameObject loop;
-
+    List<GameObject> holelist = new List<GameObject>();
 
 
     void Start()
@@ -19,10 +19,17 @@ public class createhole : MonoBehaviour
             float randomx = Random.Range(0.8f, 12f);
             float randomy = Random.Range(1f, 9f);
             Vector3 coordinates = new Vector3(randomx, randomy, 0);
-            Instantiate(loop, coordinates, Quaternion.identity);
+            var newhole=Instantiate(loop, coordinates, Quaternion.identity);
+            holelist.Add(newhole);
             yield return new WaitForSeconds(1);
         }
     }
+    public List<GameObject> returnholes()
+    {
+        return holelist;
+    }
+        
+
 
 }
 
