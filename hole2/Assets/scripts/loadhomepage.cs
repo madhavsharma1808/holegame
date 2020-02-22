@@ -14,6 +14,6 @@ public class loadhomepage : MonoBehaviour
     IEnumerator loadnextscene()
     {
         yield return new WaitForSeconds(7);
-        SceneManager.LoadScene("corescene");
+        SceneManager.LoadScene("homepage");
     }
 }
