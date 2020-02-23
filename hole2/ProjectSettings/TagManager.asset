@@ -10,6 +10,7 @@ TagManager:
   - wall down
   - player
   - enemy
+  - holes
   layers:
   - Default
   - TransparentFX

@@ -6,16 +6,27 @@ public class enemypath : MonoBehaviour
 {
 
     [SerializeField] float speed = 4f;
+    [SerializeField] GameObject playerobject;
     void Update()
     {
-        var player = FindObjectOfType<playermovement>().returncoordinates();
+        if (GameObject.Find("player"))
+        {
+            var obj = FindObjectOfType<destroyplayer>().returnlife();
+            if (obj == 0)
+            {
 
-        var speedrandom = Random.Range(1f, speed);
-        transform.position = Vector2.MoveTowards(transform.position, player, speedrandom * Time.deltaTime);
+                var player = FindObjectOfType<playermovement>().returncoordinates();
+                var speedrandom = Random.Range(1f, speed);
+                float randomx = Random.Range(0.8f, 12f);
+                float randomy = Random.Range(1f, 9f);
 
+                transform.position = Vector2.MoveTowards(transform.position, player, speedrandom * Time.deltaTime);
+
+            }
+        }
         
     }
-
+    
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.GetType() == typeof(CircleCollider2D))

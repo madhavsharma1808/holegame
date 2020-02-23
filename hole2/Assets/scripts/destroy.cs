@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class destroy : MonoBehaviour
 {
-    // Start is called before the first frame update
+   
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag=="player")
+        if (collision.gameObject.tag == "player")
+        {
             Destroy(gameObject);
+        }
     }
 }
