@@ -21,5 +21,9 @@ public class loadgameagain : MonoBehaviour
         {
             SceneManager.LoadScene("corescene");
         }
+        if(Input.GetAxis("Cancel")==1)
+        {
+            Application.Quit();
+        }
     }
 }
