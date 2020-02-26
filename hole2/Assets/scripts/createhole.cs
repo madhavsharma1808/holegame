@@ -21,7 +21,7 @@ public class createhole : MonoBehaviour
             Vector3 coordinates = new Vector3(randomx, randomy, 0);
             GameObject newhole=Instantiate(loop, coordinates, Quaternion.identity);
             holelist.Add(newhole);
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(1.5f);
         }
     }
 
